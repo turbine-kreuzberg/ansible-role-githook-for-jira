@@ -14,7 +14,7 @@
       chdir: "{{git_dir}}"
 
   roles:
-    - ansible-role-githook
+    - ansible-role-githook-for-jira
 
   post_tasks:
   - name: create readme
