@@ -1,6 +1,42 @@
 ---
 - name: test playbook
   hosts: localhost
-  roles:
-    - ansible-role-githook-for-jira
+  remote_user: root
+  pre_tasks:
+  - name: create directory
+    file:
+      path: "{{git_dir}}"
+      state: "directory"
 
+  - name: git init
+    command: git init
+    args:
+      chdir: "{{git_dir}}"
+
+  roles:
+    - ansible-role-githook
+
+  post_tasks:
+  - name: create readme
+    command: touch README.md
+    args:
+      chdir: "{{git_dir}}"
+
+  - name: add readme
+    command: git add README.md
+    args:
+      chdir: "{{git_dir}}"
+
+  - name: git commit
+    expect:
+      command: "sh {{playbook_dir}}/commit.sh {{git_dir}}"
+      responses:
+        (?i)password: "some passwd"
+    args:
+      chdir: "{{git_dir}}"
+    register: cmd_result
+
+  - name: assert that connection fails
+    assert:
+       that:
+         - "'connection error!' in cmd_result.stdout"
