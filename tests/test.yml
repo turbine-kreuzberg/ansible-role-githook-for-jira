@@ -1,0 +1,6 @@
+---
+- name: test playbook
+  hosts: localhost
+  roles:
+    - ansible-role-githook
+

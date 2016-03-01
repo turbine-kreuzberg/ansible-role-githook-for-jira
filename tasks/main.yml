@@ -1,0 +1,31 @@
+---
+- name: install githook for jira
+    become: root
+    become_method: sudo
+    command: pip install git+https://github.com/kingmray/githook_for_jira.git
+
+  - name: create directory
+    file:
+        path: {{test_dir}}
+        state: "directory"
+
+  - name: git init
+    command: git init
+    chdir: {{test_dir}}
+
+  - name: copy githook to {{test_dir}}
+    file:
+      src: files/post-commit
+      dest: {{test_dir}}/.git/hooks/post-commit
+
+  - name: create readme
+    command: touch README.md
+    chdir: {{test_dir}}
+
+  - name: add readme
+    command: git add README.md
+    chdir: {{test_dir}}
+
+  - name: git commit
+    command: git commit -m "ticket BETA-33"
+    chdir: {{test_dir}}
