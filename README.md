@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/profile/votum/ansible-role-githook-for-jira.svg?branch=master)](https://travis-ci.org/votum/ansible-role-githook-for-jira)
+
 # githook for jira
 
 installs a local githook for jira
