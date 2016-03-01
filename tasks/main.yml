@@ -2,7 +2,7 @@
 - name: install githook for jira
     become: root
     become_method: sudo
-    command: pip install git+https://github.com/kingmray/githook_for_jira.git
+    command: pip install git+https://github.com/votum/githook-for-jira.git
 
   - name: create directory
     file:
