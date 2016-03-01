@@ -16,6 +16,7 @@ addons:
 install:
   # Install ansible
   - pip install ansible
+  - pip install pexpect
 
   # Check ansible version
   - ansible --version
