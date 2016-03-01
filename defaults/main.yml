@@ -1,2 +1,4 @@
 ---
-test_dir = "/tmp/git_test"
+git_dir: "/tmp/git_test"
+jira_url: "https://some.jira.account"
+gitlab_url: "http://some.gitlab.account"

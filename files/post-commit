@@ -1,5 +1,5 @@
-#/bin/bash
+#!/usr/bin/env python
 from jiraGitHook.jiraGitHook import JiraGitHook
 
 git_hook = JiraGitHook()
-git_hook.git_hook()
+print git_hook.git_hook()
