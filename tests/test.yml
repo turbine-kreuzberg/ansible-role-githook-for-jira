@@ -2,5 +2,5 @@
 - name: test playbook
   hosts: localhost
   roles:
-    - ansible-role-githook
+    - ansible-role-githook-for-jira
 
