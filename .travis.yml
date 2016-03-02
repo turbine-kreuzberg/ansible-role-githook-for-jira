@@ -26,6 +26,8 @@ install:
   - printf '[defaults]\nroles_path=../' >ansible.cfg
 
 script:
+  # echo pexpect version
+  - "python2.7 -c 'import pexpect; print(pexpect.__version__)'"
   # Basic role syntax check
   - "ansible-playbook -i tests/inventory tests/$SITE --syntax-check"
 
