@@ -28,6 +28,8 @@ install:
 script:
   # echo pexpect version
   - "python2.7 -c 'import pexpect; print(pexpect.__version__)'"
+  # echo ansible version
+  - "python2.7 -c 'import ansible; print(ansible.__version__)'"
   # Basic role syntax check
   - "ansible-playbook -i tests/inventory tests/$SITE --syntax-check"
 
