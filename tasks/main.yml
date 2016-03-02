@@ -13,7 +13,7 @@
 - name: install githook for jira
   become: yes
   become_method: sudo
-  command: pip install git+https://github.com/votum/githook_for_jira.git
+  command: pip install git+https://github.com/votum/githook-for-jira.git
 
 - name: copy githook to {{git_dir}}
   copy:
