@@ -6,7 +6,7 @@ env:
     version: 7
     init: /usr/lib/systemd/systemd
     run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-    playbook: centos-7-test.yml
+    playbook: test.yml
 
 services:
   - docker
