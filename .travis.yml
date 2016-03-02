@@ -12,6 +12,8 @@ services:
   - docker
 
 before_install:
+  # Create ansible.cfg with correct roles_path
+  - printf '[defaults]\nroles_path=../' >ansible.cfg
   # Pull container
   - 'sudo docker pull ${distribution}:${version}'
   # Customize container
