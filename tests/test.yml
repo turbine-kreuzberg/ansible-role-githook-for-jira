@@ -13,6 +13,12 @@
     args:
       chdir: "{{git_dir}}"
 
+  - name: git config --global user.name surname.lastname
+    command: git config --global user.name surname.lastname
+
+  - name: git config --global user.email surname.lastname@email.com
+    command: git config --global user.email surname.lastname@email.com
+
   roles:
     - ansible-role-githook-for-jira
 
