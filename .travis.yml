@@ -12,12 +12,11 @@ addons:
   apt:
     packages:
     - python-pip
-    - python-pexpect
+    - ansible
 
 install:
   # Install ansible
-  - pip install ansible
-  - pip install pexpect
+  #- pip install ansible
 
   # Check ansible version
   - ansible --version
