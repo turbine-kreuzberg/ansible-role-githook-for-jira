@@ -16,4 +16,11 @@ will be send to Jira as comment.
 
 subject of commit message is parsed for Ticket ID.
 
-set parameters in default/main.yml to your needs.
+## installation
+
+set parameters in default/main.yml to your needs. and run:
+
+```
+ansible-galaxy install votum.githook-for-jira --roles-path=./etc/ansible/roles
+```
+
