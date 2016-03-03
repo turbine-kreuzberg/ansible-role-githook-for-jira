@@ -2,8 +2,8 @@ dependencies: []
 
 galaxy_info:
   author: kingmray
-  description: Apache 2.x for RedHat/CentOS/Debian/Ubuntu.
-  company: "Midwestern Mac, LLC"
+  description: installs a local githook for jira
+  company: "VOTUM"
   license: "license (BSD, MIT)"
   min_ansible_version: 1.4
   platforms:
@@ -20,4 +20,5 @@ galaxy_info:
     - saucy
     - trusty
   categories:
-    - web
+    - git
+    - jira
