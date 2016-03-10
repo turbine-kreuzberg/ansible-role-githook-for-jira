@@ -33,7 +33,7 @@
     args:
       chdir: "{{git_dir}}"
 
-  - name: git commit
+  - name: git commit && push
     expect:
       command: "sh {{playbook_dir}}/commit.sh {{git_dir}}"
       responses:
