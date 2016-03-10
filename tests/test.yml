@@ -12,6 +12,8 @@
     command: git init
     args:
       chdir: "{{git_dir}}"
+  - name: git set remote url
+    command: git config --add push.default simple
 
   - name: git config --global user.name surname.lastname
     command: git config --global user.name surname.lastname
