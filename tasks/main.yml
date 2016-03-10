@@ -1,10 +1,14 @@
 ---
-
+- name: install pip
+  become: yes
+  become_method: sudo
+  package: name=python-pip state=latest
 
 - name: unset gitlab url
-  command: git config --unset user.gitlab
+  command: "git config --unset-all user.gitlab"
   args:
     chdir: "{{git_dir}}"
+  ignore_errors: yes
 
 - name: set gitlab url
   command: git config --add user.gitlab {{gitlab_url}}
@@ -12,9 +16,10 @@
     chdir: "{{git_dir}}"
 
 - name: unset jira url
-  command: git config --unset user.jira
+  command: "git config --unset-all user.jira"
   args:
     chdir: "{{git_dir}}"
+  ignore_errors: yes
 
 - name: set jira url
   command: git config --add user.jira {{jira_url}}
@@ -28,6 +33,7 @@
 
 - name: copy githook to {{git_dir}}
   copy:
-    src: files/post-commit
-    dest: "{{git_dir}}/.git/hooks/post-commit"
+    src: files/pre-push
+    dest: "{{git_dir}}/.git/hooks/pre-push"
     mode: 0755
+

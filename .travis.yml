@@ -29,3 +29,12 @@ script:
 
   # Test role.
   - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm ansible-playbook /etc/ansible/roles/ansible-role-githook-for-jira/tests/${playbook}'
+
+  # Test idempotence.
+    - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm ansible-playbook /etc/ansible/roles/ansible-role-githook-for-jira/tests/${playbook}'
+
+  # Clean up
+  - sudo docker stop "$(cat ${container_id})"
+
+  notifications:
+    webhooks: https://galaxy.ansible.com/api/v1/notifications/
