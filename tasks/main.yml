@@ -1,7 +1,18 @@
 ---
 
-- name: get jira
+
+- name: unset gitlab url
+  command: git config --unset user.gitlab
+  args:
+    chdir: "{{git_dir}}"
+
+- name: set gitlab url
   command: git config --add user.gitlab {{gitlab_url}}
+  args:
+    chdir: "{{git_dir}}"
+
+- name: unset jira url
+  command: git config --unset user.jira
   args:
     chdir: "{{git_dir}}"
 
