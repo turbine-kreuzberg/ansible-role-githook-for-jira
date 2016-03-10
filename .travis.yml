@@ -31,7 +31,7 @@ script:
   - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm ansible-playbook /etc/ansible/roles/ansible-role-githook-for-jira/tests/${playbook}'
 
   # Test idempotence.
-    - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm ansible-playbook /etc/ansible/roles/ansible-role-githook-for-jira/tests/${playbook}'
+  - 'sudo docker exec --tty "$(cat ${container_id})" env TERM=xterm ansible-playbook /etc/ansible/roles/ansible-role-githook-for-jira/tests/${playbook}'
 
   # Clean up
   - sudo docker stop "$(cat ${container_id})"
