@@ -24,7 +24,7 @@
 
   post_tasks:
   - name: create readme
-    command: touch README.md
+    command: "more" >>README.md
     args:
       chdir: "{{git_dir}}"
 
@@ -41,6 +41,9 @@
     args:
       chdir: "{{git_dir}}"
     register: cmd_result
+
+  - debug:
+      var: cmd_result.stdout
 
   - name: assert that connection fails
     assert:
